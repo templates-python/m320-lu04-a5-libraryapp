@@ -28,7 +28,9 @@ class Customer:
         # Referenz (self) mit der Methode add_customer() zuweisen.
         #
         # TODO
-        self.name = name
+        self._name = name
+        self._librarian = librarian
+        self._library = library
 
 
     def print(self):
