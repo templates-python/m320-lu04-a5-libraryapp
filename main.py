@@ -1,3 +1,7 @@
+from library import Library
+from customer import Customer
+from librarian import Librarian
+from book import Book
 '''
 Bibliothek-Applikation ...
 Author  : René Probst

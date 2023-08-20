@@ -1,3 +1,4 @@
+from library import Library
 class Customer:
     '''
     Die Klasse beschreibt einen Kunden mit Namen, der in der Bibliothek ein Buch
@@ -28,6 +29,7 @@ class Customer:
         # Referenz (self) mit der Methode add_customer() zuweisen.
         #
         # TODO
+
 
 
 
