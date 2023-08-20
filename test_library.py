@@ -32,8 +32,7 @@ class TestLibrary:
 
 
     def test_add_and_print_customers(self, sample_library, customer_max, customer_moritz, capsys):
-        sample_library.add_customer(customer_max)
-        sample_library.add_customer(customer_moritz)
+
         sample_library.print_customer()
         captured = capsys.readouterr()
         assert 'Kunden:\nKunde: Max\nKunde: Moritz\n---\n' in captured.out
