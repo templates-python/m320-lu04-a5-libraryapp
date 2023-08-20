@@ -1,3 +1,4 @@
+from library import Library
 class Librarian:
     '''
     Die Klasse repräsentiert den Bibliothekar.
