@@ -23,6 +23,8 @@ class Librarian:
         '''
         # Initialisieren Sie hier die Attribute für name und library.
         # TODO
+        self._name = name
+        self._library = library
 
     def buy_new_book(self, title, isbn):
         '''
