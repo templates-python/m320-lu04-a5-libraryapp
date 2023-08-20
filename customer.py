@@ -1,3 +1,4 @@
+from library import Library
 class Customer:
     '''
     Die Klasse beschreibt einen Kunden mit Namen, der in der Bibliothek ein Buch
@@ -31,6 +32,7 @@ class Customer:
         self._name = name
         self._librarian = librarian
         self._library = library
+        self._library.add_customer(self)
 
 
     def print(self):

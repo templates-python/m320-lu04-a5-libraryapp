@@ -1,3 +1,6 @@
+from library import Library
+from customer import Customer
+from librarian import Librarian
 '''
 Bibliothek-Applikation ...
 Author  : René Probst
@@ -11,6 +14,11 @@ if __name__ == "__main__":
     # Objekte erzeugen und die Kundenliste ausgeben.
     # Teil 1
     # TODO
+    library = Library()
+    pit = Librarian('Pit', library)
+    Customer('Moritz', pit, library)
+    Customer('Ursula', pit, library)
+    library.print_customer()
 
     # pit kauft 5 neue Bücher, die er der Bibliothek beifügt.
     # Danach wird das Inventar der Bibliothek ausgegeben.
