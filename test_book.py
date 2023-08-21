@@ -21,7 +21,7 @@ class TestBook:
         sample_book.location = 'Shelf 2'
         sample_book.print()
         captured = capsys.readouterr()
-        assert 'ISBN : 1234567890 / Titel: Sample Book  / Ablage : Shelf 2' in captured.out
+        assert captured.out == 'ISBN : 1234567890 / Titel: Sample Book  / Ablage : Shelf 2\n'
 
 if __name__ == '__main__':
     pytest.main()
