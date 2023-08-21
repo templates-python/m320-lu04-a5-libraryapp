@@ -1,4 +1,7 @@
 from library import Library
+from book import Book
+from library import Library
+
 class Librarian:
     '''
     Die Klasse repräsentiert den Bibliothekar.
@@ -38,6 +41,10 @@ class Librarian:
         # hier ein Buch-Objekt erzeugen, der Bibliothek zufügen und dann noch
         # den Ablageort (location) eintragen.
         # TODO
+        book = Book(title, isbn)
+        location = self._library.add_book(book)
+        book.location = location
+
 
     def borrow_a_book_by_title(self, title):
         '''

@@ -25,6 +25,12 @@ def main():
     # Danach wird das Inventar der Bibliothek ausgegeben.
     # Teil 2
     # TODO
+    pit.buy_new_book('Ich bin dann mal weg', '3-345-678')
+    pit.buy_new_book('im Westen nichts neues', '6-444-856')
+    pit.buy_new_book('Das Omen', '3-3345-678-X')
+    pit.buy_new_book('Harry Potter, die neue Welt', '3-4321-334')
+    pit.buy_new_book('die schönsten Zugreisen', '3-2123-554')
+    library.print_inventory()
 
     # Ursula und Moritz leihen sich ein Buch aus
     # Teil 3
