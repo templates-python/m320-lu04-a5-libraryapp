@@ -6,11 +6,11 @@ from book import Book
 Bibliothek-Applikation ...
 Author  : René Probst
 Date    : 31.8.2022
-Version : 1.0
+Version : 2.0
 Changed :
 '''
 
-if __name__ == "__main__":
+def main():
     print("Bibliotheks-Anwendung\n=====================\n")
     # Objekte erzeugen und die Kundenliste ausgeben.
     # Teil 1
@@ -39,3 +39,6 @@ if __name__ == "__main__":
     # Ursula will ein Buch, das es nicht gibt.
     # TODO
     pass
+
+if __name__ == "__main__":
+    main()
