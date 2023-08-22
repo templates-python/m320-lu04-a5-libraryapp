@@ -17,3 +17,6 @@ def test_main_part2(capsys):
 
     # Überprüfung der Ausgabe mit dem regulären Ausdruck
     assert re.match(expected_pattern, output), f"Die Ausgabe entspricht nicht dem erwarteten Muster:\n {output}"
+
+def test_main_part3(capsys):
+    pass
