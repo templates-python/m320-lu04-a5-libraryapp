@@ -17,8 +17,8 @@ def main():
     # TODO
     library = Library()
     pit = Librarian('Pit', library)
-    Customer('Moritz', pit, library)
-    Customer('Ursula', pit, library)
+    moritz = Customer('Moritz', pit, library)
+    ursula = Customer('Ursula', pit, library)
     library.print_customer()
 
     # pit kauft 5 neue Bücher, die er der Bibliothek beifügt.
@@ -35,6 +35,9 @@ def main():
     # Ursula und Moritz leihen sich ein Buch aus
     # Teil 3
     # TODO
+    ursula.borrow_a_book_by_title('Das Omen')
+    moritz.borrow_a_book_by_title('Ich bin dann mal weg')
+    library.print_inventory()
 
     # Ursula bringt ihr Buch zurück
     # Teil 4
