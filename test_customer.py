@@ -26,6 +26,12 @@ class TestCustomer:
         captured = capsys.readouterr()
         assert captured.out == 'Kunde: Max\n'
 
+    def test_borrow_a_book_by_title(self, customer_max, pit):
+        pit.buy_new_book('Test Titel', 'ABC-123')
+        customer_max.borrow_a_book_by_title('Test Titel')
+        book = customer_max.get_borrowed_book()
+        assert book.title == 'Test Titel'
+
 
 
 

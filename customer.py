@@ -1,4 +1,5 @@
 from library import Library
+from librarian import Librarian
 class Customer:
     '''
     Die Klasse beschreibt einen Kunden mit Namen, der in der Bibliothek ein Buch
@@ -33,6 +34,7 @@ class Customer:
         self._librarian = librarian
         self._library = library
         self._library.add_customer(self)
+        self._book = None
 
 
     def print(self):
@@ -61,7 +63,10 @@ class Customer:
         # Die Kundin fordert beim Bibliothekar ein Buch an und sagt, welchen Titel sie will.
         # Sie hat dann die Referenz auf das Buch.
         # TODO
+        self._book = self._librarian.borrow_a_book_by_title(title)
         print(self._name + " hat das Buch '" + self._book.title + "' erhalten.")
+
+
 
     def bring_back_a_book(self):
         '''
