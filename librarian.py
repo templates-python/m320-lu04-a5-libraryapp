@@ -56,6 +56,10 @@ class Librarian:
         # sich beim Buch dessen Ablageort und leiht das Buch in der Bibliothek aus.
         # Sollte das Buch nicht existieren, gibt Pit eine Meldung aus, z.B. "Das angefragte Buch ist nicht vorhanden."
         # TODO
+        book = self._library.search_book_by_title(title)
+        location = book.location
+        book = self._library.borrow_book(location)
+        return book
 
     def get_a_book_from_customer(self,borrowed_book):
         '''
