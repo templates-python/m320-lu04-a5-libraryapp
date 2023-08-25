@@ -31,6 +31,7 @@ class Customer:
         #
         # TODO
         self._name = name
+        self._reminded = False
         self._librarian = librarian
         self._library = library
         self._library.add_customer(self)
@@ -90,4 +91,13 @@ class Customer:
         '''
         Erinnerung, dass ein Buch noch ausstehend ist
         '''
+        self._reminded = True
         print("Das Buch '" + self._book.title + "' ist noch ausstehend")
+
+    def is_reminded(self) :
+        '''
+        Status der Mahnung.
+        False = nicht ermahnt
+        True  = ermahnt
+        '''
+        return self._reminded

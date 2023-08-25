@@ -2,6 +2,7 @@ from library import Library
 from book import Book
 from library import Library
 
+
 class Librarian:
     '''
     Die Klasse repräsentiert den Bibliothekar.
@@ -78,6 +79,8 @@ class Librarian:
         # des Kunden nach dessen Referenz.
         print("Erinnerung für " + name)
         # TODO
+        customer = self._library.search_customer(name)
+        customer.remind()
 
     def remove_book(self, title):
         '''

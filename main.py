@@ -48,6 +48,8 @@ def main():
     # Moritz wird gemahnt
     # Teil 5
     # TODO
+    pit.remind_customer('Moritz')
+    library.print_inventory()
 
     # Pit löscht ein Buch aus der Bibliothek
     # TODO
