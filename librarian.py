@@ -68,6 +68,7 @@ class Librarian:
         '''
         # Der Bibliothekar stellt das Buch zurpck in die Bibliothek.
         # TODO
+        self._library.put_back_book(borrowed_book)
 
     def remind_customer(self, name):
         '''

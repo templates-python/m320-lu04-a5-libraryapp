@@ -30,6 +30,11 @@ class TestCustomer:
         assert book.isbn == 'ABC-123'
         assert book.location is not None  # es muss ein String mit einem Ablageort hinterlegt sein.
 
+    def test_get_a_book_from_customer(self, sample_library, pit):
+        book = Book('Test', 'ABC-789')
+        pit.get_a_book_from_customer(book)
+        book = sample_library.search_book_by_title('Test')
+        assert book.title == 'Test'
 
 
 

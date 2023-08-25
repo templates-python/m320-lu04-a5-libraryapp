@@ -32,6 +32,14 @@ class TestCustomer:
         book = customer_max.get_borrowed_book()
         assert book.title == 'Test Titel'
 
+    def test_bring_back_a_book(self, customer_max, sample_library, pit):
+        pit.buy_new_book('Test', 'ABC-123')
+        customer_max.borrow_a_book_by_title('Test')
+        customer_max.bring_back_a_book()
+        book = sample_library.search_book_by_title('Test')
+        assert book.title == 'Test'
+
+
 
 
 

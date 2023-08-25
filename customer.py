@@ -76,6 +76,7 @@ class Customer:
         # Die Kundin gibt das Buch dem Bibliothekar zurück.
         # Sie hat die Referenz auf das Buch, das sie ausgeliehen hat.
         # TODO
+        self._librarian.get_a_book_from_customer(self._book)
         print(self._name + " hat das Buch '" + self._book.title + "' zurückgebracht")
 
     def get_borrowed_book(self):
