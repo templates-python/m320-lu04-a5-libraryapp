@@ -89,3 +89,5 @@ class Librarian:
         '''
         print("\n---\nentferne Buch '" + title + "'" )
         # TODO
+        book = self._library.search_book_by_title(title)
+        self._library.remove_book(book)

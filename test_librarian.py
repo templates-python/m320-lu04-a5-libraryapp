@@ -46,6 +46,15 @@ class TestCustomer:
         customer_max.remind()
         assert customer_max.is_reminded() == True
 
+    def test_remove_book(self, sample_library, pit):
+        pit.buy_new_book('Test Titel', 'ABC-123')
+        book = sample_library.search_book_by_title('Test Titel')
+        assert book.title == 'Test Titel'
+        pit.remove_book('Test Titel')
+        book = sample_library.search_book_by_title('Test Titel')
+        assert book == None
+
+
 
 
 

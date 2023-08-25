@@ -53,6 +53,8 @@ def main():
 
     # Pit löscht ein Buch aus der Bibliothek
     # TODO
+    pit.remove_book('Harry Potter, die neue Welt')
+    library.print_inventory()
 
     # Ursula will ein Buch, das es nicht gibt.
     # TODO
