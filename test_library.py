@@ -2,7 +2,6 @@ import pytest
 from library import Library  # Stellen Sie sicher, dass Sie die richtigen Modulnamen verwenden
 from book import Book
 from customer import Customer
-import random
 
 class TestLibrary:
 
@@ -32,11 +31,10 @@ class TestLibrary:
 
 
     def test_add_and_print_customers(self, sample_library, customer_max, customer_moritz, capsys):
-        sample_library.add_customer(customer_max)
-        sample_library.add_customer(customer_moritz)
+
         sample_library.print_customer()
         captured = capsys.readouterr()
-        assert 'Kunden:\nKunde: Max\nKunde: Moritz\n---\n' in captured.out
+        assert captured.out == 'Kunden:\nKunde: Max\nKunde: Moritz\n---\n'
 
     def test_search_customer(self, sample_library, customer_max, customer_moritz):
         sample_library.add_customer(customer_max)
@@ -56,7 +54,7 @@ class TestLibrary:
         sample_library.add_book(book_2)
         sample_library.print_inventory()
         captured = capsys.readouterr()
-        assert 'Inventar:\nISBN : 123 / Titel: Adam  / Ablage : AB1\nISBN : 987 / Titel: Eva  / Ablage : XY9\n' in captured.out
+        assert captured.out == 'Inventar:\nISBN : 123 / Titel: Adam  / Ablage : AB1\nISBN : 987 / Titel: Eva  / Ablage : XY9\n---\n'
 
     def test_search_book(self, sample_library, book_1, book_2):
         sample_library.add_book(book_1)

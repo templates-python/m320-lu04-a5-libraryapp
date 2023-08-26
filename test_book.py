@@ -1,12 +1,11 @@
 import pytest
-import pytest
 from book import Book  # Stellen Sie sicher, dass Sie den richtigen Modulnamen verwenden
 
 class TestBook:
 
     @pytest.fixture
     def sample_book(self):
-        return Book('Sample Book', '1234567890')
+        return Book(title = 'Sample Book', isbn='1234567890')
 
     def test_initialization(self, sample_book):
         assert sample_book.title == 'Sample Book'
