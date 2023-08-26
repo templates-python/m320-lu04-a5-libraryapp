@@ -1,4 +1,7 @@
 from library import Library
+from librarian import Librarian
+
+
 class Customer:
     '''
     Die Klasse beschreibt einen Kunden mit Namen, der in der Bibliothek ein Buch
@@ -13,7 +16,8 @@ class Customer:
     Author  : René Probst
     Date    : 31.08.2022
     Version : 1.0
-    Changed : ...
+    Changed : 26.8.2023
+    Version : 1.1   (" durch ' ersetzt, Kommentare ergänzt)
     '''
 
     def __init__(self, name, librarian, library):
@@ -24,20 +28,19 @@ class Customer:
         :param librarian: Referenz zum Bibliothekar
         '''
         #
-        # Initialisieren Sie hier die Attribute für name, librarian und library.
+        # Initialisieren Sie hier die Attribute für name und librarian.
         # Erstellen Sie die Referenz zum Library-Objekt, in dem sie die eigene
         # Referenz (self) mit der Methode add_customer() zuweisen.
+        # Der Parameter library wird nur lokal im Konstruktor gebraucht (für den
+        # Aufruf von add_customer) und wird daher keinem Attribut zugewiesen.
         #
         # TODO
 
-
-
-
     def print(self):
         '''
-        Gibt den Namen des Kunden aus
+        Gibt den Namen des Kunden aus.
         '''
-        print("Kunde: " + self.name)
+        print(f'Kunde: {self.name}')
 
     @property
     def name(self):
@@ -51,7 +54,7 @@ class Customer:
         '''
         Bezieht beim Bibliothekar das Buch, dessen Titel mitgegeben wird.
         Ist das Buch verfügbar, wird die Referenz abgespeichert.
-        Andernfalls (Referenz ist null) wird eine entsprechende Meldung ausgegeben.
+        Andernfalls (Referenz ist None) wird eine entsprechende Meldung ausgegeben.
 
         Der Titel des gewünschten Buches wird dem Bibliothekar mitgeteilt.
         :param title: Titel des Buchs
@@ -59,22 +62,26 @@ class Customer:
         # Die Kundin fordert beim Bibliothekar ein Buch an und sagt, welchen Titel sie will.
         # Sie hat dann die Referenz auf das Buch.
         # TODO
-        print(self._name + " hat das Buch '" + self._book.title + "' erhalten.")
+
+        # Diesen Code erst nachher ausführen, da sonst das Attribut self._book
+        # sicher None ist.
+        print(f'{self._name} hat das Buch "{self._book.title}" erhalten.')
 
     def bring_back_a_book(self):
         '''
         Bringt dem Bibliothekar das ausgeliehene Buch zurück.
-        Nach der Rückgabe des Buchs wird die Referenz auf None gesetzt.
+        Nach der Rückgabe des Buchs wird die Book-Referenz auf None gesetzt.
+        (= kein Buch ausgeliehen)
         '''
         # Die Kundin gibt das Buch dem Bibliothekar zurück.
         # Sie hat die Referenz auf das Buch, das sie ausgeliehen hat.
+        print(f'{self._name} hat das Buch "{self._book.title}" zurückgebracht')
         # TODO
-        print(self._name + " hat das Buch '" + self._book.title + "' zurückgebracht")
 
     def get_borrowed_book(self):
         '''
         Liefert das Buch, das durch den Kunden ausgeliehen wurde.
-        :return: Referenz zum Buch
+        :return: Referenz zum ausgeliehenen Buch
         '''
         return self._book
 
@@ -82,4 +89,16 @@ class Customer:
         '''
         Erinnerung, dass ein Buch noch ausstehend ist
         '''
-        print("Das Buch '" + self._book.title + "' ist noch ausstehend")
+        # Das Flag (self._reminded) für die Mahnung setzen
+        print(f'Das Buch "{self._book.title}" ist noch ausstehend')
+
+    # TODO
+
+    def is_reminded(self):
+        '''
+        Liefert den Status der Mahnung.
+        False = nicht ermahnt
+        True  = ermahnt
+        :return: Status der Mahnung true/false
+        '''
+        # TODO
