@@ -5,7 +5,7 @@ from customer import Customer
 from librarian import Librarian
 
 
-class TestCustomer:
+class TestLibrarian:
 
     @pytest.fixture
     def sample_library(self):
@@ -35,7 +35,7 @@ class TestCustomer:
         assert book.location is not None  # es muss ein String mit einem Ablageort hinterlegt sein.
 
     def test_get_a_book_from_customer(self, sample_library, pit):
-        book = Book('Test', 'ABC-789')
+        book = Book(title='Test', isbn='ABC-789')
         pit.get_a_book_from_customer(book)
         book = sample_library.search_book_by_title('Test')
         assert book.title == 'Test'

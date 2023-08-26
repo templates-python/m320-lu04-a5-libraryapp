@@ -1,4 +1,4 @@
-from dataclasses impot dataclass
+from dataclasses import dataclass
 
 @dataclass
 class Book:
@@ -12,7 +12,8 @@ class Book:
     Author  : René Probst
     Date    : 30.08.2022
     Version : 1.0
-    Changed : ...
+    Changed : 26.8.2023
+    Version : 2.0   (Klasse als dataclass umgebaut)
     '''
 
     '''
@@ -24,7 +25,7 @@ class Book:
 
     title: str = None # wird durch den Aufruf des (impliziten) Konstruktors initialisiert
     isbn: str = None  # dito
-    location: str = None # wird erst zur Laufzeit, wenn das Buch in der Bibliothek abgelegt wird zugewiesen
+    location: str = None # wird erst zur Laufzeit, wenn das Buch in der Bibliothek abgelegt wird, zugewiesen
 
     def print(self):
         '''

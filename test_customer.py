@@ -38,6 +38,7 @@ class TestCustomer:
         customer_max.bring_back_a_book()
         book = sample_library.search_book_by_title('Test')
         assert book.title == 'Test'
+        assert customer_max.get_borrowed_book() == None
 
 
 

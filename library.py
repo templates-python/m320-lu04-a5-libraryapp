@@ -9,12 +9,14 @@ class Library:
     - löschen von Büchern
     - ausleihen von Büchern (Ausgabe und Rücknahme)
     - registrieren von Kunden
+    an.
     Über die Ausgabe des Inventars ist jederzeit eine Übersicht der Bücher verfügbar.
 
     Author  : René Probst
     Date    : 30.08.2022
     Version : 1.0
-    Changed : ...
+    Changed : 26.8.2023
+    Version : 1.1   (" durch ' ersetzt)
     '''
 
     def __init__(self):
@@ -30,10 +32,10 @@ class Library:
         '''
         Gibt den aktuellen Stand der Bücher in der Bibliothek auf dem Stdout aus.
         '''
-        print("Inventar:")
+        print('Inventar:')
         for book in self._booklist:
             book.print()
-        print("---")
+        print('---')
 
     def add_customer(self, customer):
         '''
@@ -57,10 +59,10 @@ class Library:
         '''
         Gibt eine Liste der Kunden auf dem Stdout aus.
         '''
-        print("Kunden:")
+        print('Kunden:')
         for customer in self._customers:
             customer.print()
-        print("---")
+        print('---')
 
     def add_book(self, a_book):
         '''
