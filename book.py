@@ -24,3 +24,26 @@ class Book:
         """
         print(f'ISBN : {self.isbn} / Titel: {self.title}  / Ablage : {self.location}')
 
+    @property
+    def titel(self):
+        return self._titel
+    
+    @titel.setter
+    def titel(self, value):
+        self._titel = value
+        
+    @property
+    def isbn(self):
+        return self._isbn
+    
+    @isbn.setter
+    def isbn(self, value):
+        self._isbn = value
+    
+    @property
+    def location(self):
+        return self._location
+    
+    @location.setter
+    def location(self, value):
+        self._location = value

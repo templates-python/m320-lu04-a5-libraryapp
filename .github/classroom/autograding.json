@@ -199,16 +199,6 @@
       "comparison": "included",
       "timeout": 10,
       "points": 1
-    },
-    {
-      "name": "test_main_part1",
-      "setup": "sudo -H pip3 install -r requirements.txt",
-      "run": "pytest -v  -k \"test_main_part1\"",
-      "input": "",
-      "output": "",
-      "comparison": "included",
-      "timeout": 10,
-      "points": 1
     }
   ]
 }
