@@ -16,7 +16,7 @@ class TestLibrarian:
         return Librarian('Pit', sample_library)
 
     @pytest.fixture
-    def customer_max(self, pit,sample_library):
+    def customer_max(self, pit, sample_library):
         return Customer('Max', pit, sample_library)
 
     def test_buy_new_book(self, sample_library, pit):
@@ -24,8 +24,7 @@ class TestLibrarian:
         book = sample_library.search_book_by_title('Test Titel')
         assert book.title == 'Test Titel'
         assert book.isbn == 'ABC-123'
-        assert book.location is not None  #es muss ein String mit einem Ablageort hinterlegt sein.
-
+        assert book.location is not None  # es muss ein String mit einem Ablageort hinterlegt sein.
 
     def test_borrow_a_book_by_title(self, sample_library, pit):
         pit.buy_new_book('Test Titel', 'ABC-123')
@@ -33,6 +32,13 @@ class TestLibrarian:
         assert book.title == 'Test Titel'
         assert book.isbn == 'ABC-123'
         assert book.location is not None  # es muss ein String mit einem Ablageort hinterlegt sein.
+
+    def test_borrow_a_book_by_unknown_title(self, capsys, sample_library, pit):
+        pit.buy_new_book('Test Titel', 'ABC-123')
+        book = pit.borrow_a_book_by_title('Das unbekannte Buch')
+        assert book is None
+        captured = capsys.readouterr()
+        assert captured.out == 'Das angefragte Buch ist nicht vorhanden\n'
 
     def test_get_a_book_from_customer(self, sample_library, pit):
         book = Book(title='Test', isbn='ABC-789')
@@ -53,8 +59,3 @@ class TestLibrarian:
         pit.remove_book('Test Titel')
         book = sample_library.search_book_by_title('Test Titel')
         assert book == None
-
-
-
-
-
