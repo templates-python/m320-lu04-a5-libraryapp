@@ -31,3 +31,27 @@ class Book:
         Gibt die Informationen des Buchs am Stdout aus.
         """
         print(f'ISBN : {self.isbn} / Titel: {self.title}  / Ablage : {self.location}')
+        
+    @property
+    def title(self):
+        return self._title
+    
+    @title.setter
+    def title(self, value):
+        self._title = value
+        
+    @property
+    def isbn(self):
+        return self._isbn
+    
+    @isbn.setter
+    def isbn(self, value):
+        self._isbn = value
+        
+    @property
+    def location(self):
+        return self._location
+    
+    @location.setter
+    def location(self, value):
+        self._location = value
